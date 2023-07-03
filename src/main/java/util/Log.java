@@ -18,34 +18,44 @@ public class Log {
     public static void info(String message) {
         if (debug) {
             System.out.println(GREEN + message + GREEN);
+            reset();
         }
     }
 
     public static void criticalInfo(String message) {
         if (debug) {
             System.out.println(GREEN_BACKGROUND + BLACK + message + BLACK + GREEN_BACKGROUND);
+            reset();
         }
     }
 
     public static void debug(String message) {
         if (debug) {
             System.out.println(YELLOW + message + YELLOW);
+            reset();
         }
     }
 
     public static void error(String message) {
         if (debug) {
             System.out.println(RED + message + RED);
+            reset();
         }
     }
 
     public static void exception(Exception exception) {
         exception(exception.getMessage());
+        reset();
     }
 
     public static void exception(String message) {
         if (debug) {
             System.out.println(RED_BACKGROUND + message + RED_BACKGROUND);
+            reset();
         }
+    }
+
+    public static void reset(){
+        System.out.print(RESET);
     }
 }
