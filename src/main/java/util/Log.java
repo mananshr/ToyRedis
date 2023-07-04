@@ -8,7 +8,6 @@
 
 package util;
 
-
 import static util.ConsoleColors.*;
 
 public class Log {
@@ -24,7 +23,9 @@ public class Log {
 
     public static void criticalInfo(String message) {
         if (debug) {
-            System.out.println(GREEN_BACKGROUND + BLACK + message + BLACK + GREEN_BACKGROUND);
+            System.out.print(GREEN_BACKGROUND);
+            System.out.println(BLACK + message);
+            System.out.print(GREEN_BACKGROUND);
             reset();
         }
     }
