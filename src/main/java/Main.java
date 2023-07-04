@@ -1,6 +1,8 @@
 import util.Log;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -25,6 +27,13 @@ public class Main {
             clientSocket = serverSocket.accept();
 
             Log.info("Client socket accepting now");
+
+            // TODO
+            InputStream inputStream = clientSocket.getInputStream();
+
+            OutputStream outputStream = clientSocket.getOutputStream();
+            byte[] bytesArray = new String("+PONG\r\n").getBytes("utf-8");
+            outputStream.write(bytesArray);
 
         } catch (IOException e) {
             Log.exception("IOException: " + e.getMessage());
