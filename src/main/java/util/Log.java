@@ -23,9 +23,7 @@ public class Log {
 
     public static void criticalInfo(String message) {
         if (debug) {
-            System.out.print(GREEN_BACKGROUND);
-            System.out.println(BLACK + message);
-            System.out.print(GREEN_BACKGROUND);
+            System.out.println(GREEN_BACKGROUND + "" +BLACK + message +BLACK + GREEN_BACKGROUND);
             reset();
         }
     }

@@ -1,8 +1,6 @@
 import util.Log;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -30,6 +28,7 @@ public class Main {
 
             // TODO
             InputStream inputStream = clientSocket.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
             OutputStream outputStream = clientSocket.getOutputStream();
             byte[] bytesArray = new String("+PONG\r\n").getBytes("utf-8");

@@ -13,7 +13,7 @@ public enum ConsoleColors {
     RESET("\033[0m"),
 
     // Regular Colors. Normal color, no bold, background color etc.
-    BLACK("\033[0;30m"),    // BLACK
+    BLACK("\u001B[30m"),    // BLACK [0;30m
     RED("\033[0;31m"),      // RED
     GREEN("\033[0;32m"),    // GREEN
     YELLOW("\033[0;33m"),   // YELLOW
@@ -45,7 +45,7 @@ public enum ConsoleColors {
     // Background
     BLACK_BACKGROUND("\033[40m"),   // BLACK
     RED_BACKGROUND("\033[41m"),     // RED
-    GREEN_BACKGROUND("\033[42m"),   // GREEN
+    GREEN_BACKGROUND("\u001B[42m"),   // GREEN \033[42m
     YELLOW_BACKGROUND("\033[43m"),  // YELLOW
     BLUE_BACKGROUND("\033[44m"),    // BLUE
     MAGENTA_BACKGROUND("\033[45m"), // MAGENTA
