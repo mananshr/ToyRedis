@@ -13,7 +13,7 @@ public class Main {
         Socket clientSocket = null;
         int port = 6379;
 
-        Log.criticalInfo("Port number is "+port);
+        Log.criticalInfo("Port number is " + port);
 
         try {
             serverSocket = new ServerSocket(port);
@@ -29,10 +29,15 @@ public class Main {
             // TODO
             InputStream inputStream = clientSocket.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
+            try {
+                // C̶h̶a̶n̶g̶e̶
+                Log.info("Input buffer reader set? " + (reader == null ? "true" : "false"));
+            } catch (NullPointerException e) {
+                Log.exception(e);
+            }
             OutputStream outputStream = clientSocket.getOutputStream();
-            byte[] bytesArray = new String("+PONG\r\n").getBytes("utf-8");
-            outputStream.write(bytesArray);
+            // byte[] bytesArray = new String("+PONG\r\n").getBytes("utf-8");
+            // outputStream.write(bytesArray);
 
         } catch (IOException e) {
             Log.exception("IOException: " + e.getMessage());
